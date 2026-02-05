@@ -1,115 +1,103 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width,initial-scale=1" />
-	<title>Simple Resume</title>
-	<link rel="stylesheet" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>[Your Name] — [Your Job Title]</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-	<button id="darkToggle" class="dark-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
-		<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="sun" d="M12 3v2M12 19v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42M12 7a5 5 0 100 10 5 5 0 000-10z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-	</button>
+  <div class="site">
+    <div class="layout">
+      <div class="hero-photo">
+        <div class="photo-wrap">
+          <!-- Replace with your photo in images/ (recommended size ~1200x1600) -->
+          <img class="photo" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?fit=crop&w=1200&q=80" alt="Photo placeholder">
+        </div>
+      </div>
 
-		<section class="content">
-			<div class="intro">
-				<h2>About Me</h2>
-				<p>This is a short future-focused description. I build accessible, modern web apps and enjoy learning new technologies.</p>
-			</div>
+      <aside class="panel">
+        <div class="topbar">
+          <div class="brand">[Your Job Title]</div>
+          <div class="nav">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
 
-			<div class="hero">
-				<div class="hero-right">
-					<div class="role-card">
-						<h3 class="role-title">Recent Roles</h3>
-						<p>Frontend Developer — built responsive UI components and client-facing features, focusing on accessibility and performance.</p>
-					</div>
-					<div class="role-card">
-						<h3 class="role-title">Upcoming Projects</h3>
-						<p>Working on a portfolio of interactive web apps and contributing to open-source documentation.</p>
-						<button class="cta">Watch Reel</button>
-					</div>
-					<!-- condensed static info; removed dynamic sections/table as requested -->
-				</div>
-			</div>
-		</section>
-			<div class="hero">
-				<div class="hero-right">
-					<div class="role-card">
-						<h3 class="role-title">Recent Roles</h3>
-						<p>I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
-					</div>
-					<div class="role-card">
-						<h3 class="role-title">Upcoming Projects</h3>
-						<p>I'm a paragraph. Click here to add your own text and edit me. It's easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.</p>
-						<button class="cta">Watch Reel</button>
-					</div>
-				</div>
-				
-				<div class="switcher">
-					<button class="switch active" data-section="education" onclick="loadSection('education')">Education</button>
-					<button class="switch" data-section="professional" onclick="loadSection('professional')">Professional</button>
-					<button class="switch" data-section="personal" onclick="loadSection('personal')">Personal</button>
-				</div>
+        <section id="home" class="hp-hero">
+          <h1>[One-sentence value proposition — what you deliver and for whom]</h1>
+          <p>A concise line about your goal: e.g. "I help companies ship accessible, high-performance web apps — aiming to land a senior role / attract freelance clients."</p>
+        </section>
 
-				<div class="table-wrap">
-					<table id="sectionTable">
-						<thead>
-							<tr><th>Title</th><th>Detail</th><th>Year</th></tr>
-						</thead>
-						<tbody>
-							<!-- JS fills this -->
-						</tbody>
-					</table>
-				</div>
+        <section id="about" class="about">
+          <h3>About</h3>
+          <p>[Short career narrative: years of experience, strengths, approach, and what you're seeking. Example: "I’m a Frontend Engineer with 6+ years building performant, accessible React apps. I focus on UI architecture, testing and delightful UX, and I’m looking for senior roles where I can mentor teams and lead frontend initiatives."]</p>
+        </section>
 
-			</div>
-		</section>
-	</main>
+        <section id="portfolio" class="portfolio">
+          <h3>Portfolio</h3>
+          <div class="projects">
+            <div class="project">
+              <h4>Project One — [Short title]</h4>
+              <p>[One-line summary; key tech: React, Accessibility, Performance]</p>
+            </div>
+            <div class="project">
+              <h4>Project Two — [Short title]</h4>
+              <p>[One-line summary; key tech: Node.js, API design, Integration]</p>
+            </div>
+            <div class="project">
+              <h4>Project Three — [Short title]</h4>
+              <p>[One-line summary; key tech: TypeScript, Testing, CI/CD]</p>
+            </div>
+            <div class="project">
+              <h4>Project Four — [Short title]</h4>
+              <p>[One-line summary; key tech: Performance, Accessibility, Design Systems]</p>
+            </div>
+          </div>
+        </section>
 
-	<script>
-		// Content data for the three sections
-		const data = {
-			education: [
-				{title: 'B.S. in Computer Science', detail: 'University Name', year: '2022'},
-				{title: 'Certification: Web Dev', detail: 'Online Course Provider', year: '2024'}
-			],
-			professional: [
-				{title: 'Frontend Intern', detail: 'Company Name — Built UI components', year: '2023'},
-				{title: 'Freelance Developer', detail: 'Small projects: landing pages, integrations', year: '2024'}
-			],
-			personal: [
-				{title: 'Volunteer Tutor', detail: 'Taught programming basics', year: '2021'},
-				{title: 'Open Source', detail: 'Contributed fixes and docs', year: '2024'}
-			]
-		};
+        <section id="contact" class="contact">
+          <h3>Contact</h3>
+          <p>If you'd like to work together, email me at <a href="mailto:you@example.com">you@example.com</a> or connect on <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+          <p style="margin-top:12px"><a class="cta" href="mailto:you@example.com">Email me</a></p>
+        </section>
 
-		function loadSection(section){
-			document.querySelectorAll('.switch').forEach(b=>b.classList.toggle('active', b.dataset.section===section));
-			const tbody = document.querySelector('#sectionTable tbody');
-			tbody.innerHTML = '';
-			(data[section]||[]).forEach(row=>{
-				const tr = document.createElement('tr');
-				tr.innerHTML = `<td>${row.title}</td><td>${row.detail}</td><td>${row.year}</td>`;
-				tbody.appendChild(tr);
-			});
-		}
+        <div style="display:flex;gap:8px;justify-content:space-between;align-items:center">
+          <div style="color:var(--muted);font-size:13px">© [Your Name]</div>
+          <button id="themeBtn" class="theme-toggle" title="Toggle theme">Toggle</button>
+        </div>
+      </aside>
+    </div>
+  </div>
 
-		// Dark mode toggle (persists in localStorage)
-		const darkToggle = document.getElementById('darkToggle');
-		function applyTheme(isDark){
-			document.documentElement.classList.toggle('dark', isDark);
-			localStorage.setItem('prefers-dark', isDark ? '1' : '0');
-			darkToggle.classList.toggle('active', isDark);
-		}
-		darkToggle.addEventListener('click', ()=>applyTheme(!document.documentElement.classList.contains('dark')));
-		// initialize from storage or system preference
-		const stored = localStorage.getItem('prefers-dark');
-		const prefersDark = stored === null ? window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches : stored === '1';
-		applyTheme(prefersDark);
+  <script>
+    // Smooth scrolling and active nav highlight
+    document.querySelectorAll('.nav a').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        document.querySelectorAll('.nav a').forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+        const id = a.getAttribute('href');
+        const el = document.querySelector(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
 
-		// load default section
-		loadSection('education');
-	</script>
+    // Theme toggle (persist)
+    const themeBtn = document.getElementById('themeBtn');
+    function setTheme(dark){
+      if(dark) document.documentElement.classList.add('dark'); else document.documentElement.classList.remove('dark');
+      localStorage.setItem('site-dark', dark? '1':'0');
+      themeBtn.classList.toggle('active', dark);
+    }
+    themeBtn.addEventListener('click', ()=> setTheme(!document.documentElement.classList.contains('dark')));
+    const stored = localStorage.getItem('site-dark');
+    const prefer = stored === null ? window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches : stored === '1';
+    setTheme(prefer);
+  </script>
 </body>
 </html>
