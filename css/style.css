@@ -20,6 +20,14 @@ body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;margin:0;background:v
 .content{flex:1;background:var(--card);padding:28px;border-radius:14px;box-shadow:0 10px 30px rgba(12,20,30,0.04);border:1px solid rgba(10,10,10,0.03)}
 .intro h2{margin:0 0 8px;color:var(--accent)}
 .intro p{color:var(--muted);margin-top:0}
+.hero{display:flex;gap:28px;align-items:flex-start;margin-top:8px}
+.hero-right{max-width:520px}
+.role-card{margin-bottom:22px}
+.role-title{color:var(--accent);font-size:20px;margin:0 0 8px;font-weight:600}
+.role-title::after{content:'';display:block;width:44px;height:3px;background:var(--accent);border-radius:3px;margin-top:8px}
+.role-card p{color:var(--muted);margin:10px 0 12px;line-height:1.6}
+.cta{background:transparent;border:2px solid var(--accent);color:var(--accent);padding:10px 16px;border-radius:8px;cursor:pointer}
+.cta:hover{background:var(--accent);color:#fff}
 .switcher{display:flex;gap:8px;margin:16px 0}
 .switch{background:transparent;border:1px solid #e6e9ee;padding:8px 12px;border-radius:10px;cursor:pointer;color:#333}
 .switch.active{background:var(--accent);color:#fff;border-color:transparent}
@@ -46,4 +54,12 @@ tbody tr:hover{background:rgba(10,102,194,0.04)}
 	.resume{flex-direction:column;padding:18px}
 	.side{width:100%}
 	.photo-wrap{width:120px;height:120px}
+}
+
+@media(min-width:1100px){
+  /* make photo large on wide screens to match the pasted layout */
+  .resume{gap:40px}
+  .side{width:60%}
+  .content{width:40%}
+  .photo-wrap{width:520px;height:520px}
 }
