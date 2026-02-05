@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Simple Resume</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<main class="resume">
+		<aside class="side">
+			<div class="photo-wrap">
+				<img class="photo" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?fit=crop&w=300&q=80" alt="photo placeholder">
+			</div>
+			<h1 class="name">Your Name</h1>
+			<p class="title">Future Description: Aspiring web developer, lifelong learner, problem solver.</p>
+
+			<div class="details">
+				<p><strong>Location:</strong> City, Country</p>
+				<p><strong>Phone:</strong> (123) 456-7890</p>
+				<p><strong>Email:</strong> you@example.com</p>
+			</div>
+
+			<div class="socials">
+				<a href="mailto:you@example.com" title="Email">
+					<img src="https://cdn.simpleicons.org/gmail/D14836" alt="email"/>
+				</a>
+				<a href="https://www.linkedin.com/" target="_blank" rel="noopener" title="LinkedIn">
+					<img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="linkedin"/>
+				</a>
+				<a href="https://www.instagram.com/" target="_blank" rel="noopener" title="Instagram">
+					<img src="https://cdn.simpleicons.org/instagram/E4405F" alt="instagram"/>
+				</a>
+				<a href="https://github.com/" target="_blank" rel="noopener" title="GitHub">
+					<img src="https://cdn.simpleicons.org/github/181717" alt="github"/>
+				</a>
+			</div>
+		</aside>
+
+		<section class="content">
+			<div class="intro">
+				<h2>About Me</h2>
+				<p>This is a short future-focused description. I aim to build accessible, modern web apps and grow into full-stack roles. I enjoy learning new technologies and contributing to open-source.</p>
+			</div>
+
+			<div class="switcher">
+				<button class="switch active" data-section="education" onclick="loadSection('education')">Education</button>
+				<button class="switch" data-section="professional" onclick="loadSection('professional')">Professional</button>
+				<button class="switch" data-section="personal" onclick="loadSection('personal')">Personal</button>
+			</div>
+
+			<div class="table-wrap">
+				<table id="sectionTable">
+					<thead>
+						<tr><th>Title</th><th>Detail</th><th>Year</th></tr>
+					</thead>
+					<tbody>
+						<!-- JS fills this -->
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</main>
+
+	<script>
+		const data = {
+			education: [
+				{title: 'B.S. in Computer Science', detail: 'University Name', year: '2022'},
+				{title: 'Certification: Web Dev', detail: 'Online Course Provider', year: '2024'}
+			],
+			professional: [
+				{title: 'Frontend Intern', detail: 'Company Name — Built UI components', year: '2023'},
+				{title: 'Freelance Developer', detail: 'Small projects: landing pages, integrations', year: '2024'}
+			],
+			personal: [
+				{title: 'Volunteer Tutor', detail: 'Taught programming basics', year: '2021'},
+				{title: 'Open Source', detail: 'Contributed fixes and docs', year: '2024'}
+			]
+		};
+
+		function loadSection(section){
+			document.querySelectorAll('.switch').forEach(b=>b.classList.toggle('active', b.dataset.section===section));
+			const tbody = document.querySelector('#sectionTable tbody');
+			tbody.innerHTML = '';
+			(data[section]||[]).forEach(row=>{
+				const tr = document.createElement('tr');
+				tr.innerHTML = `<td>${row.title}</td><td>${row.detail}</td><td>${row.year}</td>`;
+				tbody.appendChild(tr);
+			});
+		}
+
+		// load default
+		loadSection('education');
+	</script>
+</body>
+</html>
