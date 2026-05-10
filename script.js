@@ -69,7 +69,7 @@ function generateProjectsTimeline() {
         
         const linkHTML = project.url ? `<a href="${project.url}" class="project-link">View Project →</a>` : '';
         
-        projectItem.innerHTML = `
+        projectItem.innerHTML = 
             <div class="project-item-content">
                 <div class="project-item-date">${project.dateDisplay}</div>
                 <h3>${project.title}</h3>
@@ -79,7 +79,7 @@ function generateProjectsTimeline() {
                 </div>
                 ${linkHTML}
             </div>
-        `;
+        ;
         
         projectsContainer.appendChild(projectItem);
     });
