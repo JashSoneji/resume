@@ -1,0 +1,160 @@
+/* Full-height layout */
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #121212;
+    color: white;
+}
+
+/* Header stays at top */
+header {
+    flex-shrink: 0; /* Don't shrink */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.9rem;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav button {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+nav button:hover,
+.arrow-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Palette fills remaining space */
+.palette-container {
+    flex: 1; /* Takes all remaining space */
+    display: flex;
+    gap: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 0;
+}
+
+/* Each color bar fills available height */
+.color-bar {
+    flex: 1; /* Equal width for each tile */
+    height: 100%; /* Full height of container */
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    min-width: 0;
+    background: #222;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.color-bar.locked {
+    opacity: 0.9;
+    transform: scale(0.99);
+    box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.12);
+}
+
+.tile-actions {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.tile-btn {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tile-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.value {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 10px;
+    font-family: 'Courier New', monospace;
+}
+
+.tile-adjuster {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 20px;
+}
+
+.arrow-btn {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.tile-adjuster {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 20px;
+}
+
+.arrow-btn {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}

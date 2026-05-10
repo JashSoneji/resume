@@ -10,8 +10,16 @@ const educationData = [
     }
 ];
 
-// Projects Timeline Data - Empty for now, you can add later
-const projectsData = [];
+// Projects Timeline Data
+const projectsData = [
+    {
+        title: 'Tome of Color',
+        dateDisplay: '2024',
+        description: 'An interactive color visualization project exploring color theory and palettes.',
+        tags: ['HTML', 'CSS', 'JavaScript'],
+        url: 'Tome_of_Color/index.html'
+    }
+];
 
 // Certifications Data - Empty for now, you can add later
 const certificationsData = [];
@@ -59,6 +67,8 @@ function generateProjectsTimeline() {
             .map(tag => `<span class="tag">${tag}</span>`)
             .join('');
         
+        const linkHTML = project.url ? `<a href="${project.url}" class="project-link">View Project →</a>` : '';
+        
         projectItem.innerHTML = `
             <div class="project-item-content">
                 <div class="project-item-date">${project.dateDisplay}</div>
@@ -67,6 +77,7 @@ function generateProjectsTimeline() {
                 <div class="project-item-tags">
                     ${tagsHTML}
                 </div>
+                ${linkHTML}
             </div>
         `;
         
