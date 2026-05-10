@@ -17,7 +17,7 @@ const projectsData = [
         dateDisplay: '2024',
         description: 'An interactive color visualization project exploring color theory and palettes.',
         tags: ['HTML', 'CSS', 'JavaScript'],
-        url: 'Tome_of_Color/index.html'
+        url: 'https://jashsoneji.github.io/Tome_of_Color/'
     }
 ];
 
